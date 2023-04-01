@@ -1,0 +1,42 @@
+header {
+    height: 60px;
+    padding: 1rem;
+    color: rgb(255, 0, 0);
+    background-color: blue;
+    justify-content: space-between;
+    align-items: center;
+    text-align : center;
+    line-height: calc(10px);
+  }
+
+footer {
+    height: 40px;
+    padding: 1rem;
+    color: rgb(255, 0, 0);
+    background-color: blue;
+    justify-content: space-between;
+    align-items: center;
+    text-align : center;
+    line-height: calc(20px);
+  }
+
+#main {
+  display: inline-block;
+  height: calc(100vh - 100px);
+  width: calc(100vw - 445px);
+  color: #ff0000;
+  background-color: aquamarine;
+  text-align : center;
+  line-height: calc(50vh + 50px);
+}
+
+
+
+
+
+/* div {
+    height: calc(100vh - 100px);
+    background-color: blueviolet;
+    color: red;
+    width: calc(100vw - 500px);
+} */

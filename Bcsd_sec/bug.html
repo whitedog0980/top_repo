@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 표시 컨트롤</title>
+<script type="text/javascript">
+
+function getShow(){
+	document.getElementById("i").style.display = "";
+	
+}
+
+function getHide(){
+	document.getElementById("i").style.display = "none";
+	
+}
+
+</script>
+</head>
+<body>
+    <nav id="i">
+        이름 : 김민준<br/>
+        학번 : 2023100090<br/>
+        나이 : 20<br/>
+        취미 : 게임하기<br/>
+        좋이하는것 : 집가기
+    </nav>
+<input type ="button" onclick="getShow()" value="보이기">
+<input type ="button" onclick="getHide()" value="숨기기">
+</body>
+</html>
