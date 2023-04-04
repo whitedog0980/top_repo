@@ -1,0 +1,44 @@
+#mainMenu {
+  display: flex;
+  position: absolute;
+  height: 300px;
+  width: calc(100vw);
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+a .topLink {
+  flex-basis: 100px;
+}
+
+/* 여기서 부터 login 내용 */
+
+#loginNav {
+  display: flex;
+  height: 80px;
+  width: 100vw;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+a .loginLink {
+  flex-basis: 100px;
+  width: calc();
+}
+
+#loginMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  width: 600px;
+  background-color: #ffffff;
+
+  align-items: center;
+}
+
+p .pLogin {
+  color: black;
+  background-color: aliceblue;
+}
