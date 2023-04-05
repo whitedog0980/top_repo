@@ -1,0 +1,3 @@
+div[data-number="1005"]:contains("4") {
+    color: aliceblue;
+}
