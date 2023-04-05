@@ -1,0 +1,128 @@
+#topNav {
+  position: relative;
+  height: 70px;
+  width: 100vw;
+}
+
+#navContents {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 50px;
+  width: calc(25vw + 70px);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content {margin-bottom: 0%;}
+
+.content.index {
+  font-size: small;
+
+}
+
+.gb_Be.content {
+  width: 30px;
+  height: 30px;
+}
+
+.gb_h.content {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+#mainDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 400px;
+  align-items: center;
+  margin-top: 100px;
+  justify-content: space-evenly;
+}
+
+#logo {
+  display: flex;
+  height: 80px; 
+  width: 240px;
+}
+
+#searchBox {
+  display: flex;
+  top: 250px;
+  height: 40px;
+  align-items: stretch;
+}
+
+#searchBox #iconClue {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+#searchBox #iconMic {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+.searchBlock {
+  border-left: none;
+  border-right: none;
+  border-bottom: solid gray;
+  border-top: solid gray;
+}
+
+#resentLinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.linkBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+}
+
+span img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  box-shadow: 100px;
+  border: 10px solid white;
+}
+
+
+/* 동적 선택자 */
+.linkBox:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+
+/* pc일때 */
+@media (min-width: 540px){
+  .pc{width: 500px;}
+  .pcSearch{width: 420px;}
+  .pcBoxs {
+    width: 400px;
+    height: 100px;
+  }
+}
+
+
+/* 모바일일때 */
+@media (max-width: 540px) {
+  .mobile{width: 300px;}
+  .mobileSearch{width: 220px;}
+  .mobileBoxs {
+    width: 200px;
+    height: 200px;
+  }
+}
