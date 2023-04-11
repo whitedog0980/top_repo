@@ -1,3 +1,5 @@
+
+/* 메인 메뉴 */
 #mainMenu {
   display: flex;
   position: absolute;
@@ -12,14 +14,23 @@ a .topLink {
   flex-basis: 100px;
 }
 
-/* 여기서 부터 login 내용 */
-
-#loginNav {
+/* login, regist 내용 */
+.navigate {
   display: flex;
   height: 80px;
   width: 100vw;
-  background-color: #ffffff;
   align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* login 내용 */
+#loginSpan {
+  display: flex;
+  height: 80px;
+  width: calc(100px + 5vw);
+  align-items: center;
+  justify-content: space-between;
 }
 
 a .loginLink {
@@ -41,4 +52,16 @@ a .loginLink {
 p .pLogin {
   color: black;
   background-color: aliceblue;
+}
+
+
+/* regist 내용 */
+#registMenu {
+  display: flex;
+  width: 100vw;
+  height: 600px;
+  flex-direction: column;
+  justify-content: center;	
+  align-items: center;
+  justify-content: space-around;
 }

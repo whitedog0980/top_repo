@@ -7,7 +7,7 @@
 # temp_F = float(input("화씨온도를 입력하세요."))
 # print(F_to_C(temp_F))
 
-# # Lab 23 소수찾기
+# Lab 23 소수찾기
 # def is_prime(n):
 #     for i in range(2, n): #1은 제외
 #         if n%i == 0: #자기 자신을 제외한 수로 나눌때 나머지가 없는지? 
@@ -59,17 +59,53 @@
 # print(is3Mult(n))
 
 # 실습과제 3
-import random
+# import random
 
-def createPassword():
-    password = ""
-    alpa_nums = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
-    for i in range(8):
-        password = password + random.choice(alpa_nums)
-    return password
+# def createPassword():
+#     password = ""
+#     alpa_nums = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+#     for i in range(8):
+#         password = password + random.choice(alpa_nums)
+#     return password
 
-print(createPassword())
-print(createPassword())
-print(createPassword())
-print(createPassword())
-print(createPassword())
+# print(createPassword())
+# print(createPassword())
+# print(createPassword())
+# print(createPassword())
+# print(createPassword())
+
+
+# 최소공배수 구하기 20까지
+
+# primes = []
+# primes_mult = 1
+
+# def is_prime(n): #소수인지 아닌기 판별하는 함수
+#     for i in range(2, n): # 1은 제외
+#         if n % i == 0: # 자기 자신을 제외한 수로 나눌 때 나머지가 없는지? 
+#             return False # 만약 있다면
+#     return True # 만약 없다면 = (소수)
+
+# def all_primes(): # primes 리스트에 소수를 추가
+#     for n in range(2, 21): # 1에서 20까지 모두 검사
+#         if is_prime(n): # 만약 소수라면?
+#             primes.append(n) #소수 리스트에 추가
+#     return primes
+
+# def lcm(): #최소 공배수 구하기
+#     lcm = 1
+#     for p in primes: #p는 소수 (primes 리스트 내부의)
+#         max_count = 0
+#         for i in range(1, 21): 
+#             count = 0
+#             while i % p == 0: 
+#                 count += 1
+#                 i //= p
+#             max_count = max(max_count, count)
+#         lcm *= p ** max_count
+#     return lcm
+
+# print(all_primes())
+# print(lcm())
+
+
