@@ -109,3 +109,119 @@
 # print(lcm())
 
 
+# #Lab_4_키워드 인수 연습 0412
+# num_1, num_2 = input("두 수의 값을 띄어쓰기로 구분해서 입력해주세요.").split()
+
+# def add(a, b):
+#     return int(a) + int(b)
+# def sub(a, b):
+#     return int(a) - int(b)
+# def mul(a, b):
+#     return int(a) * int(b)
+# def div(a, b):
+#     return int(a) / int(b)
+
+# result_1 = add(num_1, num_2)
+# result_2 = sub(num_1, num_2)
+# result_3 = mul(num_1, num_2)
+# result_4 = div(num_1, num_2)
+
+# print("더하기는", result_1, ",빼기는", result_2, ",곱하기는", result_3, ",나누기는", result_4)
+
+
+# #Lab_6_온도변환기 0412
+# def select_option():
+#     print("""\'c\' 섭씨온도에서 화씨온도로 변환
+# \'f\' 화씨온도에서 섭씨온도로 변환
+# \'q\' 종료""")
+
+# def c_to_f(tem_c):
+#     return 9.0 / 5.0 * tem_c + 32
+
+# def f_to_c(tem_f):
+#     return (tem_f - 32) * 5.0 / 9.0
+
+# choice = None
+# while choice != "q":
+#     select_option()
+#     choice = input("메뉴에서 선택하세요.")
+#     if choice == "c":
+#         tem_c = float(input("섭씨온도 :"))
+#         print("화씨온도 :", c_to_f(tem_c))
+#     elif choice == "f":
+#         tem_f = float(input("화씨온도 :"))
+#         print("섭씨온도 :", f_to_c(tem_f))
+
+
+# #Lab_17_상수 0412
+# pi = 3.141592
+
+# def main():
+#     r = float(input("원의 반지름 :"))
+#     print("원의 면적 :", area(r))
+#     print("원의 둘레 :", len(r))
+
+# def area(r):
+#     return pi * r * r
+
+# def len(r):
+#     return r * 2 * pi
+
+# main()
+
+
+#Lab_추가_0412
+# horizontal = float(input("가로길이를 입력해주세요 :"))
+# vertical = float(input("세로길이를 입력해주세요 :"))
+
+# def main():
+#     if (horizontal < 0 or vertical < 0):
+#         print("음수의 값을 입력했습니다.")
+#     return horizontal * vertical
+
+# print("넓이는", main(), "입니다.")
+
+
+# #실습과제1 0412
+# side_len = float(input("정사각형의 한변의 길이를 입력해주세요"))
+
+# def cul():
+#     all_side_len = side_len * 4
+#     area = side_len ** 2
+#     return all_side_len, area
+# result = list(cul())
+
+# print("둘레의 길이는", result[0], "입니다.")
+# print("면적은", result[1], "입니다.")
+
+
+# #실습과제2 0412
+# nums = input("정수인 숫자 4개를 띄어쓰기로 구분해서 적어주세요.").split()
+
+# def cul():
+#     max_num = max(nums)
+#     min_num = min(nums)
+#     return max_num, min_num
+# result = list(cul())
+
+# print("가장 작은 숫자는 " + result[1] + " 이고,")
+# print("기징 큰 숫자는 " + result[0] + " 이다.")
+
+
+# #실습과제3 0412
+# import math
+# xy_1 = input("첫번째 점의 x와 y좌표를 차례대로 띄어쓰기로 구분해서 적으시오").split()
+# xy_2 = input("두번째 점의 x와 y좌표를 차례대로 띄어쓰기로 구분해서 적으시오").split()
+
+# def between_distance():
+#     x = float(xy_1[0]) - float(xy_2[0])
+#     y = float(xy_1[1]) - float(xy_2[1])
+#     distance = math.sqrt((x ** 2) + (y ** 2))
+#     return distance
+
+# print("두 점의 거리는", between_distance(), "입니다.")
+
+# #실습과제4 0412
+# tem_c = int(input("섭씨온도를 입력해주세요."))
+
+# print("화씨온도는", (lambda tem_c: 9.0 / 5.0 * tem_c + 32)(tem_c), "입니다.")
