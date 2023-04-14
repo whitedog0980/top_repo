@@ -183,45 +183,52 @@
 
 
 # #실습과제1 0412
-# side_len = float(input("정사각형의 한변의 길이를 입력해주세요"))
+# side_len = float(input("정사각형의 한변의 길이를 입력해주세요")) #값 입력
 
-# def cul():
-#     all_side_len = side_len * 4
-#     area = side_len ** 2
+# def cul(): #계산
+#     all_side_len = side_len * 4 #둘레 길이
+#     area = side_len ** 2  #면적
 #     return all_side_len, area
-# result = list(cul())
+# result = list(cul())  #튜플에서 리스트로
 
 # print("둘레의 길이는", result[0], "입니다.")
 # print("면적은", result[1], "입니다.")
 
 
 # #실습과제2 0412
-# nums = input("정수인 숫자 4개를 띄어쓰기로 구분해서 적어주세요.").split()
+# nums = list(map(int, input("정수인 숫자 4개를 띄어쓰기로 구분해서 적어주세요.").split()))
+# #max, min함수에서 의도대로 작동시키기위해 map() 함수로 int자료형으로 변환및, list로 저장함
 
 # def cul():
-#     max_num = max(nums)
-#     min_num = min(nums)
+#     max_num = max(nums) #최댓값
+#     min_num = min(nums) #최솟값
 #     return max_num, min_num
-# result = list(cul())
+# result = list(cul())  #반환값을 새로운 변수에 list형태로 저장
 
-# print("가장 작은 숫자는 " + result[1] + " 이고,")
-# print("기징 큰 숫자는 " + result[0] + " 이다.")
+# print("가장 작은 숫자는", (result[1]), "이고,") #슬라이스를 사용해 list에서 값 선택
+# print("기징 큰 숫자는", (result[0]), "이다.")
 
 
 # #실습과제3 0412
 # import math
+# #첫번째 점 좌표 입력
 # xy_1 = input("첫번째 점의 x와 y좌표를 차례대로 띄어쓰기로 구분해서 적으시오").split()
+# #두번째 점 좌표 입력
 # xy_2 = input("두번째 점의 x와 y좌표를 차례대로 띄어쓰기로 구분해서 적으시오").split()
 
-# def between_distance():
-#     x = float(xy_1[0]) - float(xy_2[0])
-#     y = float(xy_1[1]) - float(xy_2[1])
+# def between_distance(): #사이 거리 계산
+#     x = float(xy_1[0]) - float(xy_2[0]) # x값의 차, 계산을 위해 float 자료형으로 변환
+#     y = float(xy_1[1]) - float(xy_2[1]) # y값의 차, 계산을 위해 float 자료형으로 변환
+#     #x, y값의 차를 제곱하여 더한값을 제곱근해서 거리값을 추출
 #     distance = math.sqrt((x ** 2) + (y ** 2))
 #     return distance
 
-# print("두 점의 거리는", between_distance(), "입니다.")
+# print("두 점의 거리는", between_distance(), "입니다.") # 출력
 
 # #실습과제4 0412
-# tem_c = int(input("섭씨온도를 입력해주세요."))
+# tem_c = int(input("섭씨온도를 입력해주세요.")) #섭씨온도 입력
 
+# #print 함수안에 lambda로 무명함수를 넣어서 출력
 # print("화씨온도는", (lambda tem_c: 9.0 / 5.0 * tem_c + 32)(tem_c), "입니다.")
+
+
