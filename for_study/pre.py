@@ -232,3 +232,263 @@
 # print("화씨온도는", (lambda tem_c: 9.0 / 5.0 * tem_c + 32)(tem_c), "입니다.")
 
 
+# #Lab8 0417
+# weight = float(input("짐의 무게는 얼마입니까?"))
+
+# if weight >= 20:
+#     print("무거운 짐은 20,000원을 내셔야 합니다.")
+# else:
+#     print("짐에대한 수수료는 없습니다.")
+
+# print("감사합니다.")
+
+
+# # Lab12 0417
+# num = int(input("정수를 입력하시오: "))
+# if (num % 2) == 0:
+#     print("입력된 정수는 짝수입니다.")
+# elif (num % 2) == 1:
+#     print("입력된 정수는 홀수입니다.")
+
+
+# # Lab14 0417
+# num_1 = int(input("첫 번째 정수: "))
+# num_2 = int(input("두 번째 정수: "))
+
+# if num_1 > num_2:
+#     print("큰 수는", num_1)
+# if num_1 < num_2:
+#     print("큰 수는", num_2)
+# else:
+#     print("두수가 같습니다.")
+
+
+# # Lab18 0417
+# cost = float(input("구입 금액을 입력하시오: "))
+
+# if cost >= 100000:
+#     cost -= (cost/20)
+
+# print("지불 금액은", cost, "입니다.")
+
+
+# #Lab20 0417
+# string = input("문자열을 입력하시오: ")
+# str_len = len(string)
+
+# if str_len % 2 == 1:
+#     mid_ch_1 = string[0]
+#     print("첫 문자는 :", mid_ch_1)
+# else:
+#     mid_ch_1 = string[-1]
+#     print("마지막 문자는 :", mid_ch_1)
+
+
+# #Lab25 0417
+# st_point = int(input("이수한 학점수를 입력하시오: "))
+# p = float(input("평점을 입력하시오: "))
+# is_F = bool(input("(True,False)F가 없습니까?: "))
+
+# if (st_point >= 140) and (p >= 2.0) and (is_F == True):
+#     print("졸업이 가능합니다!")
+# else:
+#     print("졸업이 힘듭니다!")
+
+
+# #Lab29 0417
+# integer = int(input("정수를 입력하시오: "))
+
+# if integer > 0:
+#     print("입력된 정수는 양수입니다.")
+# elif integer < 0:
+#     print("입력된 정수는 음수입니다.")
+# else:
+#     print("입력된 정수는 0입니다.")
+
+
+# #Lab33 0417
+# id = ["wd0980", "wd0981", "wd0982"]
+# pw = "0980"
+
+# input_id = input("아이디를 입력하시오: ")
+# if input_id in id:
+#     input_pw = input("패스워드를 입력하시오: ")
+#     if pw == input_pw:
+#         input_pw = input("패스워드를 다시 한번 입력하시오: ")
+#         if pw == input_pw:
+#             print("정확히 저장되었습니다.")
+#     else:
+#         print("잘못된 비밀번호 입니다.")
+# else:
+#     print("알 수 없는 사용자 입니다.")
+
+
+# # Lab35 0417
+# month = int(input("월을 입력하시오: "))
+# if month == 4 or month == 6 or month == 9 or month == 11:
+#     m_days = 30
+# elif month == 2:
+#     m_days = 28
+# else:
+#     m_days = 31
+
+# print("월의 날수는", m_days)
+
+# # Lab37 0417
+# year = int(input("연도를 입력하시오: "))
+
+# if (year % 400) == 0:
+#     print(year, "년은 윤년입니다.")
+# elif not (year % 100) == 0:
+#     if (year % 4) == 0:
+#         print(year, "년은 윤년입니다.")
+# else:
+#     print(year, "년은 윤년이 아닙니다.")
+
+
+# # Lab39 0417
+# import math
+
+# a = float(input("a ="))
+# b = float(input("b ="))
+# c = float(input("c ="))
+
+# D = (b ** 2) - 4 * a * c
+# if a == 0:
+#     print("x =", -c / b)
+
+# if D == 0:
+#     print("x =", -b / (2 * a))
+# elif D > 0:
+#     print("x1 =", (-b + math.sqrt(D)) / (2.0 * a))
+#     print("x2 =", (-b + math.sqrt(D)) / (2.0 * a))
+# else:
+#     print("실근이 존재하지 않음")
+
+
+# #Lab43 0417
+# import random
+
+# print("숫자 게임에 오신 것을 환영합니다.")
+# rand_num = random.randint(1, 100)
+# guess_num = int(input("숫자를 맞춰보세요: "))
+
+# if rand_num == guess_num:
+#     print("정답입니다.")
+# elif rand_num > guess_num:
+#     print("작습니다.")
+# else:
+#     print("큽니다.")
+
+# print("게임종료")
+
+
+# # Lab45 0417
+# import random
+
+# user_rsp_str = input("(가위, 바위, 보) 중에서 하나를 선택하세요: ")
+# if user_rsp_str == "가위":
+#     user_rsp_int = 1
+# elif user_rsp_str == "바위":
+#     user_rsp_int = 2
+# else:
+#     user_rsp_int = 3
+
+# com_rsp_int = random.randint(1,3)
+# if com_rsp_int == 1:
+#     com_rsp_str = "가위"
+# elif com_rsp_int == 2:
+#     com_rsp_str = "바위"
+# else:
+#     com_rsp_str = "보"
+
+# print("사용자: " + user_rsp_str + "\n컴퓨터: " + com_rsp_str)
+
+# if user_rsp_int == com_rsp_int:
+#     print("비겼습니다.")
+# elif (((user_rsp_int == 1) and (com_rsp_int == 2))
+#     or ((user_rsp_int == 2) and (com_rsp_int == 3))
+#     or ((user_rsp_int == 3) and (com_rsp_int == 1))):
+#     print("졌습니다.")
+# else:
+#     print("이겼습니다.")
+
+
+# #Lab추가 0419
+# import math
+
+# shape = input("도형을 입력하세요.(1: 사각형, 2: 삼각형, 3: 원): ")
+# if shape == "1":
+#     wide = float(input("가로: "))
+#     height = float(input("세로: "))
+#     print("면적: " + str(wide * height))
+# elif shape == "2":
+#     wide = float(input("가로: "))
+#     height = float(input("세로: "))
+#     print("면적: " + str(wide * height * (1/2)))
+# else:
+#     r = float(input("반지름: "))
+#     print("면적: " + str((r ** 2) * math.pi))
+
+
+# #실습과제1 0417
+# height = int(input("키를 입력하세요 [cm]: ")) #키 입력
+
+# if 130 <= height <= 195: #130 아상 195 미만이라면?
+#     print("키" + str(height)+ "cm는 이용가능합니다.") #긍정 출력
+# else: #이외로는
+#     print("키" + str(height)+ "cm는 이용할 수 없습니다.") #부정 출력
+
+
+# #실습과제2 0417
+# month = int(input("월을 입력하세요 : ")) #월 입력
+
+# if 3 <= month <= 5: #3월 이상 5월 이하일때?
+#     print(str(month) + "월은 봄입니다.") #봄
+# elif 6 <= month <= 8: #6월 이상 8월 이하일때?
+#     print(str(month) + "월은 여름입니다.") #여름
+# elif 9 <= month <= 11: #9월 이상 11월 이하일때?
+#     print(str(month) + "월은 가을입니다.") #가을
+# else: #이외(12월 아상, 2월 이하)일때?
+#     print(str(month) + "월은 겨울입니다.") #겨울
+
+
+# # 실습과제3 0418
+# print("부모님과 함께왔나요?")
+# is_with_p = input("1:예, 0:아니요: ") #부모님과 함께왔는지 여부
+# age = int(input("나이를 입력하세요: ")) #나이 입력
+
+# if (is_with_p == "1"): #부모님과 함께 왔을 때
+#     if (age >= 10): #나이가 10 이상일때
+#         print("영화를 볼 수 있습니다.") # 긍정1
+# elif (is_with_p == "0"): #부모님과 함께 오지 않았을 때
+#     if (age >= 15): #나이가 15 이상일때
+#         print("영화를 볼 수 있습니다.") # 긍정2
+# else:# 이외 (나이 미달)
+#     print("영화를 볼 수 없습니다.") # 부정
+
+
+# #실습과제4 0418
+# gd_p = int(input("점수를 입력하세요: ")) #점수 입력
+# gd = "" # 학점
+# if gd_p >= 95: #95 이상이라면?
+#     gd = "A+"
+# elif 95 > gd_p >= 90: #90이상, 95미만이라면?
+#     gd = "A0"
+# elif 90 > gd_p >= 85: #85이상, 90미만이라면?
+#     gd = "B+"
+# elif 85 > gd_p >= 80: #80이상, 85미만이라면?
+#     gd = "B0"
+# elif 80 > gd_p >= 75: #75이상, 80미만이라면?
+#     gd = "C+"
+# elif 75 > gd_p >= 70: #70이상, 75미만이라면?
+#     gd = "C0"
+# elif 70 > gd_p >= 65: #65이상, 70미만이라면?
+#     gd = "D+"
+# elif 65 > gd_p >= 60: #60이상, 65미만이라면?
+#     gd = "D0"
+# else: #이외 (해당 점수 미만)
+#     gd = "F0"
+
+# print(str(gd_p) + "점은 " + gd + " 학점 입니다.") #출력
+
