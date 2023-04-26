@@ -492,3 +492,85 @@
 
 # print(str(gd_p) + "점은 " + gd + " 학점 입니다.") #출력
 
+# #Lab27 0426
+# mult = 1
+# while mult <= 9:
+#     print("3 * %d = %d" % (mult, 3 * mult))
+#     mult += 1
+
+# #Lab34 0426
+# n = 0
+# sum = 0
+# score = 0
+# print("종료하려면 음수를 입력하시오")
+
+# while score >= 0:
+#     score = int(input("성적을 입력하시오: "))
+#     if score >= 0:
+#         sum += score
+#         n += 1
+
+# if n > 0 :
+#     aver = sum / n
+# print("성적의 평균은 %f입니다." % aver)
+
+# #Lab36 0426
+# import random
+
+# tries = 0
+# number = random.randint(1, 100)
+
+# print("1부터 100 사이의 숫자를 맞추시오")
+# while tries < 10:
+#     guess = int(input("숫자를 입력하시오: "))
+#     tries = tries + 1
+#     if guess > number:
+#         print("낮음!")
+#     elif guess < number:
+#         print("높음!")
+#     else:
+#         break
+# if guess == number:
+#     print("축하합니다. 시도횟수=", tries)
+# else:
+#     print("정답은 ", number)
+
+
+#Lab44 0426
+# str = input("문자열을 입력하시오")
+
+# alp = 0
+# dig = 0
+# spaces = 0
+
+# for i in str:
+#     if i.isalpha():
+#         alp += 1
+#     elif i.isdigit():
+#         dig += 1
+#     else:
+#         spaces += 1
+
+# print("알파벳 문자의 개수 =", alp)
+# print("숫자 문자의 개수 =", dig)
+# print("스페이스 문자의 개수 =", spaces)
+
+
+# #Lab46 0426
+# acount = input("계좌번호를 입력하시오: ")
+# acount_result = ""
+
+# for i in acount:
+#     if i == "-":
+#         pass
+#     else:
+#         acount_result += i
+
+# print(acount_result)
+
+
+# #예제40 0426
+# for y in range(6):
+#     for x in range(12):
+#         print("*", end="")
+#     print("")
