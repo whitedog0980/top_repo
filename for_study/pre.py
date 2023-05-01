@@ -574,3 +574,10 @@
 #     for x in range(12):
 #         print("*", end="")
 #     print("")
+
+
+#실습예제1 0426
+level = int(input("원하는 단은: "))
+
+for i in range(1, 10):
+    print("%d * %d = %d" % (level, i, level * i))
