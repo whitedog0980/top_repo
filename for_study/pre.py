@@ -576,8 +576,55 @@
 #     print("")
 
 
-#실습예제1 0426
-level = int(input("원하는 단은: "))
+# #실습예제1 0426
+# level = int(input("원하는 단은: "))
 
-for i in range(1, 10):
-    print("%d * %d = %d" % (level, i, level * i))
+# for i in range(1, 10):
+#     print("%d * %d = %d" % (level, i, level * i))
+
+
+# #실습예제2 0502
+# max_num = int(input("임의의 수를 입력하시오: ")) #임의의 수 입력
+
+# print("1부터 " + str(max_num) + "까지의 숫자중 짝수는 다음과 같습니다")
+
+# for i in range(1, max_num + 1): #i = 1 ~ 임의의 수 까지 반복
+#     if (i % 2) == 0:  # 만약 2로 나누어서 나머지가 0이라면? = i는 2의 배수라면?
+#         print(i)  #i를 출력
+
+
+#실습예제 3~5 0502
+# #3
+# for i in range(1, 11):
+#     print(i, end=" ")
+# print("")
+
+# for i in range(0, 9):
+#     print(i * 4, end=" ")
+# print("")
+
+# for i in range(9, 0, -1):
+#     print(i, end=" ")
+
+
+#4
+# import math
+
+# score = [] #빈 리스트 생성
+# for i in range(1, 6): #5번 반복
+#     i = int(input("성적을 입력해주세요: ")) #성적 입력받기
+#     score.append(i) #score리스트에 성적 추가
+# print("") #줄바꿈
+
+# print("입력한 성적들: " + str(score))
+# print("최고 성적: " + str(max(score)))
+# print("최저 성적: " + str(min(score)))
+# print("평균: " + str(sum(score) / len(score))) #총합값 / 리스트 수
+
+
+# #5
+# def plusInt(n1, n2): #n1, n2를 매개변수로 받고 더힌깂을 반환하는 함수
+#     return (n1 + n2)
+
+# print(plusInt(int(input("n1 입력 : ")), int(input("n2 입력 : ")))) #매개변수에 input으로 값을 입력받음
+
