@@ -577,7 +577,7 @@
 
 
 # #실습예제1 0426
-# level = int(input("원하는 단은: "))
+# level = int(input("원하는 단은: ")) #구구단 값 입력
 
 # for i in range(1, 10):
 #     print("%d * %d = %d" % (level, i, level * i))
