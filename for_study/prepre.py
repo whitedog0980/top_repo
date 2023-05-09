@@ -54,5 +54,12 @@
 # print(all_primes())
 # print(lcm())
 
+a, b, c = input().split()
 
+print(int(a) + int(b) + int(c))
+
+
+print(type(a))
+print(type(b))
+print(type(c))
 
