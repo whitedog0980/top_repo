@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="rsp.css">
+  <title>Document</title>
+</head>
+<body>
+<!-- nav -->
+  <nav id="nav">
+    <div class="menu"></div>
+    <div id="gameNameDiv">
+      <p id="gameName">가위바위보 게임</p>
+    </div>
+    <div class="menu">
+      <button id="resetBtn" class="btn" onclick="Reset()">리셋</button>
+    </div>
+  </nav>
+<!-- main div -->
+  <div id="mainDiv">
+    <span id="randRsp" class="rsp">
+      <img id="R" src="C:\Users\User\Desktop\top_repo\top_repo\images\rock.png" alt="바위" class="img">
+      <img id="S" src="C:\Users\User\Desktop\top_repo\top_repo\images\scissor.png" alt="가위" class="img">
+      <img id="P" src="C:\Users\User\Desktop\top_repo\top_repo\images\paper.png" alt="보" class="img">
+    </span>
+
+    <div id="rspDiv">
+      <span id="rock" class="rsp" tabindex="0" onclick="randReset(), selectRock()">
+        <img src="C:\Users\User\Desktop\top_repo\top_repo\images\rock.png" alt="바위" class="img">
+      </span>
+      <span id="scissor" class="rsp" tabindex="0" onclick="randReset(), selectScissor()">
+        <img src="C:\Users\User\Desktop\top_repo\top_repo\images\scissor.png" alt="가위" class="img">
+      </span>
+      <span id="paper" class="rsp" tabindex="0" onclick="randReset(), selectPaper()">
+        <img src="C:\Users\User\Desktop\top_repo\top_repo\images\paper.png" alt="보" class="img">
+      </span>
+    </div>
+
+    <button id="startBtn" class="btn" onclick="gameSet(), gameResult()">시작!</button>
+  </div>
+  <script src="rsp.js"></script>
+</body>
+</html>
