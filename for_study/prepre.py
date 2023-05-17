@@ -56,6 +56,7 @@
 
 
 
+
 # h = int(input("Layers :"))
 # n = []
 # t = []
@@ -120,4 +121,57 @@
 # # for i in range(0, len(cells_time)):
 # #     print(cells_time[i], end=" ")
 
-#https://developer.mozilla.org/ko/docs/Web/HTTP/Status
+
+
+# w_res = input().split() #첫번째 입력 (리스트)
+# rest_time = int(w_res[1]) #남은 시간
+# all_work = int(w_res[0]) #모든 일 갯수
+# works_time = input().split() #일들의 시간들 입력(리스트)
+# work_done = 0 #해결한 일
+
+# # works_time 리스트 내용을 전부 int자료형으로 변경
+# int_works_time = []
+# for i in range(len(works_time)):
+#     int_works_time.append(int(works_time[i]))
+
+# # 계산 반복식
+# for i in range(all_work):
+#     if rest_time > int_works_time[i]: #만약 남은시간이 i번쨰 일보다 많으면
+#         rest_time -= int_works_time[i] #남은시간 뺌 (일 수행)
+#         work_done += 1 #해결한 일 추가
+#     else:
+#         break 
+
+# print(work_done)
+
+
+import turtle
+
+star_size = 20  # 별 크기
+num_rows = 7   # 층 수
+
+# 터틀 초기화
+t = turtle.Turtle()
+t.speed(0)  # 최대 속도로 설정
+
+# 층 수 만큼 반복
+for row in range(num_rows):
+    # 현재 층에 필요한 변수 계산
+    num_stars = row + 1
+    row_width = num_stars * star_size
+    row_start = -row_width / 2
+
+    # 현재 층의 별 출력
+    for star in range(num_stars):
+        t.penup()
+        t.goto(row_start + star * star_size, -row * star_size)
+        t.pendown()
+        t.begin_fill()
+        for i in range(5):
+            t.forward(star_size)
+            t.right(144)
+        t.end_fill()
+
+# 화면 유지
+turtle.done()
+
