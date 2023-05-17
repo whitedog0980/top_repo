@@ -628,3 +628,121 @@
 
 # print(plusInt(int(input("n1 입력 : ")), int(input("n2 입력 : ")))) #매개변수에 input으로 값을 입력받음
 
+
+
+# # 실습예제 0510
+# board = [[" " for x in range(3)] for y in range(3)]
+
+# while True:
+#     for r in range(3):
+#         print(" " + board[r][0] + "  | " + board[r][1] + "  | " + board[r][2])
+#         if (r != 2):
+#             print("----|----|----")
+
+#     x = int(input("다음 수의 x좌표를 입력하시오: ")) - 1
+#     y = int(input("다음 수의 y좌표를 입력하시오: ")) - 1
+
+#     if board[x][y] != ' ':
+#         print("잘못된 위치입니다.")
+#         continue
+#     else:
+#         board[x][y] = 'X'
+#     done = False
+#     for i in range(3):
+#         for j in range(3):
+#             if board[i][j] == ' ' and not done:
+#                 board[i][j] = "O"
+#                 done = True
+#                 break
+#         if done:
+#             break
+#     else:
+#         for r in range(3):
+#             print(" " + board[r][0] + "  | " + board[r][1] + "  | " + board[r][2])
+#             if (r != 2):
+#                 print("----|----|----")
+#         print("둘곳이 없습니다.")
+#         break
+
+
+# #실습과제1 0511
+# met = [] #빈 리스트 생성
+
+# while True: #무한루프
+#     met_input = input("재료를 입력하세요(종료시에는 앤터키) :") #재료 입력받아 변수에 저장
+#     if met_input == "": #만약 입력받은값이 "" 라면?
+#         break #루프 탈출
+#     met.append(met_input) #met 리스트에 입력받은 값 추가하기
+
+# print("필요한 재료 : ")
+# print(met)
+
+
+# # 실습과제2 0511
+# import random
+
+# pre_result = [] # 빈 리스트 생성
+# pre_times = int(input("몇 번 연습할까요? :")) # 연습 횟수 입력
+# pre_total = pre_times # 계산에 사용하기 위해 다른 변수에 저장
+
+# while pre_times > 0: #연습 횟수가 0일때까지 반복
+#     pre_hit = int(input("자~ 칩니다!!(1 ~ 9) :")) # 예측위치 입력
+#     hit = random.randint(1, 9) #투구 위치
+    
+#     if pre_hit == (hit + 1) or pre_hit == (hit - 1) or pre_hit == hit: #만약 예측 위치와 투구 위치의 편차가 1일때,
+#         pre_result.append('O') # O를 리스트에 추가
+#         print("투구위치 : " + str(hit) + ", 예측위치 : " + str(pre_hit) + " => 쳤습니다!!")
+#     else: # 빗나감
+#         pre_result.append('X') # X를 리스트에 추가
+#         print("투구위치 : " + str(hit) + ", 예측위치 : " + str(pre_hit) + " => 헛스윙...")
+#     pre_times -= 1 #연습 횟수 소모
+
+# print("연습결과:", pre_result) #리스트 출력
+# print("타율은", pre_result.count('O') / pre_total, "입니다") #타율 계산및 출력
+
+
+# # 실습과제3 0512
+# stu_grades = [] #학생 성적 리스트
+# upper_80 = [] #80점 이상 리스트
+# students = 8
+
+# def append_grade(): #학생성적 리스트, 80점 이상 리스트에 추가하는 함수
+#     i = True 
+#     global students
+#     while i:
+#         grade_input = int(input("성적 " + str(9 - students) + " 입력: ")) #점수를 입력받음
+#         if 0 <= grade_input <= 100: #0~100인 유효숫자인가?
+#             stu_grades.append(grade_input) #학생 성적 리스트에 추가
+#             if 80 <= grade_input <= 100: #80~100 이라면?
+#                 upper_80.append(grade_input) #80점 이상 리스트에 추가
+#             i = False #반복 종료
+#             continue 
+
+#         print("성적 입력 오류!! 다시 입력하세요") #continue 가 발동하지 않았을때 출력
+
+# while students > 0: #남은 학생수가 0명 일 때까지
+#     append_grade()
+#     students -= 1 #한명 감소
+
+# print("성적 평균은 " + str(sum(stu_grades) / len(stu_grades)) + "입니다.") #평균 출력
+# print("80점 이상 성적을 받은 학생은 " + str(len(upper_80)) + " 명 입니다.") #80 명 이상 출력
+
+
+#실습과제 1
+grades = [] # 빈 리스트 생성
+
+for i in range(1,11): #1 ~ 10 반복
+    grades.append(int(input(str(i) + "번 학생의 점수를 입력해 주세요"))) #i 번의 학생을 입력받음
+
+grades.sort()#파이썬 내장함수 이용한 정렬
+grades.reverse()#순서를 뒤집어서 큰값부터 나열
+print(grades)
+
+
+#실습과제 2
+li = []
+for i in range(1,100):
+    li.append(i)
+
+li.reverse()
+
