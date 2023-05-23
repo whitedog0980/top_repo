@@ -20,7 +20,7 @@ function login() {
   let idInput = document.getElementById("loginInput").value
   let passwordInput = document.getElementById("passwordInput").value
   // 로그인 금지 플래그 확인
-  const loginFlag = document.cookie.includes('loginFlag=true')
+  const loginFlag = document.cookie.includes('loginBan=true') ////// Changed!!!!!!!!!
   if (loginFlag) {
     alert("잘못된 id/pw를 5회 이상 입력하였습니다. 5번째 잘못입력한 시점에서 1시간 후 로그인이 가능합니다.")
     return
@@ -41,8 +41,8 @@ function login() {
 
 function wrongAttempt() {
   wrongLoginAttempt = wrongLoginAttempt + 1
-  if (wrongLoginAttempt === 5) {
-    document.cookie = document.cookie + ";loginBan=true";
+  if (wrongLoginAttempt >= 5) { ////// Changed!!!!!!!!!
+    setCookie("loginBan", "true") ////// Changed!!!!!!!!!
   }
 }
 
@@ -65,16 +65,10 @@ function setSessionStorage(id, password) {
 }
 
 
-
-// Cookie 설정 예제
-setCookie('username', 'John Doe', 7); // 이름이 'username'이고 값이 'John Doe'인 Cookie를 7일 동안 유지합니다.
-setCookie('language', 'en', 30); // 이름이 'language'이고 값이 'en'인 Cookie를 30일 동안 유지합니다.
-
-
 // 회원가입 화면
-let idRegist = document.getElementById("idRegist").value
-let passwordRegist = document.getElementById("passwordRegist").value
-let passwordRegistCheck = document.getElementById("passwordRegistCheck").value
+//let idRegist = document.getElementById("idRegist").value
+//let passwordRegist = document.getElementById("passwordRegist").value
+//let passwordRegistCheck = document.getElementById("passwordRegistCheck").value
 
 
 
