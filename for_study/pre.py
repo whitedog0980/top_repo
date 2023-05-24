@@ -821,44 +821,44 @@
 
 
 # #실습과제_1 0522
-# tuple_A = (4,2,1,5,6,7,9)
+# tuple_A = (4,2,1,5,6,7,9) #튜플 선언
 # print(tuple_A)
 
-# tuple_A = list(tuple_A)
+# tuple_A = list(tuple_A) #튜플을 리스트로 변환
 # print(tuple_A)
 
-# tuple_A.append(3)
+# tuple_A.append(3) #리스트에 3 을 추가
 # print(tuple_A)
 
-# tuple_A.append(8)
+# tuple_A.append(8) #리스트에 8 을 추가
 # print(tuple_A)
 
-# tuple_A.sort()
-# tuple_A.reverse()
+# tuple_A.sort()   #리스트를 작은수 순서로 정렬
+# tuple_A.reverse()#리스트를 역수로 정렬
 # print(tuple_A)
 
-# tuple_A = tuple(tuple_A)
+# tuple_A = tuple(tuple_A) #리스트를 튜플로 변환
 # print(tuple_A)
 
 
 
 # #실습과제2_0522
 # def p_num_input():
-#     p_num = input("전화번호를 입력하시오(- 포함): ")
-#     return p_num.replace("-", ", ")
+#     p_num = input("전화번호를 입력하시오(- 포함): ") #전화번호를 입력받아 변수에 선언
+#     return p_num.replace("-", ", ") #replace를 이용해서 하이픈(-)을 쉼표와 띄어쓰기로 변환
 
 # print(p_num_input())
 
 
 
-# #실습과제3_0522
-# def sep_email_form():
-#     email_ad = input("이메일 주소를 입력해주세요 :")
-#     email_ad = email_ad.replace("@", ", ")
-#     email_ad = email_ad.replace(".", ", ")
-#     return email_ad
+#실습과제3_0522
+def sep_email_form():
+    email_ad = input("이메일 주소를 입력해주세요 :") #이메일 주소를 입력받은 후, email_ad 변수에 선언
+    email_ad = email_ad.replace("@", ", ")  # replace를 사용해서 @값을 , 값으로 치환 
+    email_ad = email_ad.replace(".", ", ")  # replace를 사용해서 .값을 , 값으로 치환
+    return email_ad 
 
-# print(sep_email_form())
+print(sep_email_form())
 
 
 

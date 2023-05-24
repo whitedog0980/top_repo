@@ -182,6 +182,7 @@ results = [] #채점기 기록 추가할 리스트 선언
 w = 0 #문제를 틀린 갯수
 a = 0 #문제를 맞춘 갯수
 g = 0 #패널티의 합
+is_done = 0 #새로운 문제로 넘어갔는지 확인용 변수
 
 def reset_score():
     global a, w, g
@@ -203,6 +204,7 @@ for i in range(1, int(nmq[0]) + 1):
         # k = 입력받은 리스트 값
         for k in results:
             if (j == int(k[1])) and int(k[0]) == i: #리스트값과 현재 진행중인 i 값과 j가 일치 할때,
+                
                 if k[3] == "WA": #문제가 틀렸을 경우
                     w += 1
                 else: #문제가 맞았을 경우
