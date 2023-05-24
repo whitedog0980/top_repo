@@ -728,21 +728,236 @@
 # print("80점 이상 성적을 받은 학생은 " + str(len(upper_80)) + " 명 입니다.") #80 명 이상 출력
 
 
-#실습과제 1
-grades = [] # 빈 리스트 생성
+# #실습과제 1 0519
+# grades = [] # 빈 리스트 생성
 
-for i in range(1,11): #1 ~ 10 반복
-    grades.append(int(input(str(i) + "번 학생의 점수를 입력해 주세요"))) #i 번의 학생을 입력받음
+# for i in range(1,11): #1 ~ 10 반복
+#     grades.append(int(input(str(i) + "번 학생의 점수를 입력해 주세요"))) #i 번의 학생을 입력받음
 
-grades.sort()#파이썬 내장함수 이용한 정렬
-grades.reverse()#순서를 뒤집어서 큰값부터 나열
-print(grades)
+# grades.sort()#파이썬 내장함수 이용한 정렬
+# grades.reverse()#순서를 뒤집어서 큰값부터 나열
+# print(grades)
 
 
-#실습과제 2
-li = []
-for i in range(1,100):
-    li.append(i)
 
-li.reverse()
+# #실습과제 2 0519
+# import random
+
+# target = random.randint(1,99) #정답값
+
+# li = [] #빈 리스트 생성
+# for i in range(1,100): #0~99의 수를 리스트에 추가
+#     li.append(i)
+# li.reverse() #리스트를 반전시킴
+
+# def find_num(): #2진탐색
+#     start = 0
+#     end = len(li) - 1
+#     count = 0
+#     while start <= end:
+#         mid = (start + end) // 2
+#         if li[mid] < target:
+#             count += 1
+#             break
+#         elif li[mid] < target:
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#         count += 1
+#     return target, count
+
+# print("""이진탐색 결과:
+# 검색값: {0}
+# {1}번 만에 찾았습니다""".format(find_num()[0], find_num()[1]))
+
+
+# #실습과제3 0521
+# import random
+
+# target = random.randint(1,99)
+# Try = 0
+# li = []
+
+# for i in range(1, 100): #1~99의 리스트 생성
+#     li.append(i)
+
+# #숫자 찾기 메인 함수
+# def find_num():
+#     start = 0 
+#     end = len(li) - 1
+#     count = 0 #컴퓨터 횟수
+#     j = False #컴퓨터의 게임이 끝났는가?
+
+#     while True:
+#         i = list(try_find()) #i에 함수값을 저장
+#         if i[0] == True: #만약 User가 값을 맞추었다면?
+#             return i[1], count #User 시도 횟수, Computer 시도 횟수 반환
+#         mid = (start + end) // 2
+#         if j == False: #컴퓨터의 게임이 끝나지 않았다면
+#             if li[mid] == target: 
+#                 j = True
+#             elif li[mid] < target:
+#                 start = mid + 1
+#             else:
+#                 end = mid - 1
+#             count += 1
+
+# def try_find():
+#     global Try #전역변수 호출
+#     Try += 1 #시도 횟수 증가
+#     input_num = int(input("숫자를 입력해주세요(0~99): "))
+#     if input_num == target: #정답일때
+#         print("축하합니다! 정답입니다!")
+#         return True, Try #정답을 맟췄음을 의미하는 True, 시도횟수 반환
+#     elif input_num > target:
+#         print("정답보다 큽니다")
+#     else:
+#         print("장딥보디 작습니다")
+#     return False, Try   #정답을 맞추지 못함을 의미하는 False, 시도횟수 반환
+
+# i = list(find_num())
+# print("Computer", i[1], "번, User", i[0], "번" )
+
+
+
+# #실습과제_1 0522
+# tuple_A = (4,2,1,5,6,7,9)
+# print(tuple_A)
+
+# tuple_A = list(tuple_A)
+# print(tuple_A)
+
+# tuple_A.append(3)
+# print(tuple_A)
+
+# tuple_A.append(8)
+# print(tuple_A)
+
+# tuple_A.sort()
+# tuple_A.reverse()
+# print(tuple_A)
+
+# tuple_A = tuple(tuple_A)
+# print(tuple_A)
+
+
+
+# #실습과제2_0522
+# def p_num_input():
+#     p_num = input("전화번호를 입력하시오(- 포함): ")
+#     return p_num.replace("-", ", ")
+
+# print(p_num_input())
+
+
+
+# #실습과제3_0522
+# def sep_email_form():
+#     email_ad = input("이메일 주소를 입력해주세요 :")
+#     email_ad = email_ad.replace("@", ", ")
+#     email_ad = email_ad.replace(".", ", ")
+#     return email_ad
+
+# print(sep_email_form())
+
+
+
+# #실습과제4_0522
+# grades = {1 : [80, 90, 86], 2 : [78, 88, 85],
+#           3 : [85, 85, 92], 4 : [70, 69, 65],
+#           5 : [90, 95, 100]}
+
+# for i in grades:
+#     average = grades[i]
+#     print(i, "번 :", (sum(average) / len(average)))
+
+
+
+# #lab09 0524
+# import math
+
+# r =float(input("원의 반지름을 입력하시오: "))
+# print("원의 넓이는", (r ** 2) * math.pi, "이고 원의 둘레는",
+#       r * 2 * math.pi, "이다.")
+
+
+# #lab19 0524
+# partyA = set(["Park", "Kim", "Lee"])
+# partyB = set(["Park", "Choi"])
+
+# print("2개의 파티에 모두 참석한 사람은 다음과 같습니다.")
+# print(partyA.intersection(partyB))
+
+
+# #lab30 0524
+# eng_dict = {"one" : "하나", "two" : "둘", "three" : "셋"}
+
+# print(eng_dict.get(input("단어를 입력하시오: "), "없음"))
+
+
+# #lab32 0524
+# table = {
+#     "B4" : "Before",
+#     "TX" : "Thanks",
+#     "BBL": "Be Back Later",
+#     "BCNU": "Be Seeing You",
+#     "HAND": "Have A Nice Day"
+# }
+
+# message = input("번역할 문장을 입력하시오: ")
+# words = message.split()
+# result = ""
+# for word in words:
+#     if word in table:
+#         result += table[word] + " "
+#     else:
+#         result += word
+
+# print(result)
+
+
+# #Lab 46 0524
+# def check_pal(s):
+#     low = 0
+#     high = len(s) - 1
+#     while True:
+#         if low > high:
+#             return True;
+#         a = s[low]
+#         b = s[high]
+#         if a != b:
+#             return False
+#         low += 1
+#         high -= 1
+
+# s = input("문자열을 입력하시오: ")
+# s = s.replace(" ", "") 
+# if check_pal(s)==True:
+#     print("회문입니다.")
+# else:
+#     print("회문이 아닙니다.")
+
+
+# #lab48 0524
+# phrase = input("문자열을 입력하세요 : ")
+
+# acronym = ""
+# for word in phrase.upper().split():
+#     acronym += word[0]
+# print( acronym )
+
+
+# #lab50 0524
+# sentence = input("문자열을 입력하시오: ")
+# table = { "alphas": 0, "digits":0, "spaces": 0 }
+# for c in sentence: # c : char in sentence
+#     if c.isalpha():
+#         table["alphas"] += 1
+#     if c.isdigit():
+#         table["digits"] += 1
+#     if c.isspace():
+#         table["spaces"] += 1
+# print(table)
+
+
 
