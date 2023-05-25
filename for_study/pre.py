@@ -851,25 +851,27 @@
 
 
 
-#실습과제3_0522
-def sep_email_form():
-    email_ad = input("이메일 주소를 입력해주세요 :") #이메일 주소를 입력받은 후, email_ad 변수에 선언
-    email_ad = email_ad.replace("@", ", ")  # replace를 사용해서 @값을 , 값으로 치환 
-    email_ad = email_ad.replace(".", ", ")  # replace를 사용해서 .값을 , 값으로 치환
-    return email_ad 
+# #실습과제3_0522
+# def sep_email_form():
+#     email_ad = input("이메일 주소를 입력해주세요 :") #이메일 주소를 입력받은 후, email_ad 변수에 선언
+#     email_ad = email_ad.replace("@", ", ")  # replace를 사용해서 @값을 , 값으로 치환 
+#     email_ad = email_ad.replace(".", ", ")  # replace를 사용해서 .값을 , 값으로 치환
+#     return email_ad 
 
-print(sep_email_form())
+# print(sep_email_form())
 
 
 
 # #실습과제4_0522
+
+# #학생들의 점수가 쓰인 사전
 # grades = {1 : [80, 90, 86], 2 : [78, 88, 85],
 #           3 : [85, 85, 92], 4 : [70, 69, 65],
 #           5 : [90, 95, 100]}
 
-# for i in grades:
-#     average = grades[i]
-#     print(i, "번 :", (sum(average) / len(average)))
+# for i in grades: 
+#     average = grades[i] #key값이 i인 value리스트를 변수에 선언
+#     print(i, "번 :", (sum(average) / len(average))) #평균값을 구하는 계산식
 
 
 
