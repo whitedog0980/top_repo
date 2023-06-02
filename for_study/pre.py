@@ -963,3 +963,226 @@
 
 
 
+# #Lab 20
+# import math
+# class Circle:
+#     def __init__(self, radius=1.0):
+#         self.__radius = radius
+#     def setRadius(self, r):
+#         self.__radius = r
+#     def getRadius(self): 
+#         return self.__radius
+#     def calcArea(self):
+#         area = math.pi*self.__radius*self.__radius
+#         return area
+#     def calcCircum(self):
+#         circumference = 2.0*math.pi*self.__radius
+#         return circumference
+
+# c1 = Circle(30)
+# print("원의 반지름=", c1.getRadius())
+# print("원의 넓이=", c1.calcArea())
+# print("원의 둘레=", c1.calcCircum())
+
+
+# #Lab22 0531
+# class BankAccount:
+#     def __init__(self):
+#         self.__balance = 0
+#     def withdraw(self, amount):
+#         self.__balance -= amount
+#         print("통장에서 ", amount, "가 출금되었음")
+#         return self.__balance
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         print("통장에 ", amount, "가 입금되었음")
+#         return self.__balance
+    
+# a = BankAccount()
+# a.deposit(100)
+# a.withdraw(10)
+
+
+
+# #Lab24 0531
+# class Cat:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#     def setName(self, name):
+#         self.__name = name
+#     def getName(self):
+#         return self.__name
+#     def setAge(self, age):
+#         self.__age = age
+#     def getAge(self):
+#         return self.__age
+
+# missy = Cat('Missy', 6)
+# lucky = Cat('Lucky', 11)
+# print (missy.getName(), missy.getAge())
+# print (lucky.getName(), lucky.getAge())
+
+
+
+# #Lab26 0531
+# class Box:
+#     def __init__(self, width=0, length=0, height=0):
+#         self.__width = width
+#         self.__length = length
+#         self.__height = height
+#     def setWidth(self, width):
+#         self.__width = width
+#     def setLength(self, length):
+#         self.__length = length
+#     def setHeight(self, height):
+#         self.__height = height
+#     def getVolume(self):
+#         return self.__width*self.__length*self.__height
+#     def __str__(self):
+#         return '(%d, %d, %d)' % (self.__width, self.__length, self.__height)
+    
+# box = Box(12, 34, 56)
+# print(box)
+# print('상자의 부피는 ', box.getVolume())
+
+
+
+#Lab28 0531
+# class Car:
+#     def __init__(self, speed=0, gear=1, color="white"):
+#         self.__speed = speed
+#         self.__gear = gear
+#         self.__color = color
+#     def setSpeed(self, speed):
+#         self.__speed = speed
+#     def setGear(self, gear):
+#         self.__gear = gear
+#     def setColor(self, color):
+#         self.__color = color
+#     def __str__(self):
+#         return '(%d, %d, %s)' % (self.__speed, self.__gear, self.__color)
+
+# myCar = Car()
+# myCar.setGear(3)
+# myCar.setSpeed(100)
+# print(myCar)
+
+
+
+
+# #실습과제1 0531
+# class Square:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+    
+#     def get_width(self): #접근자(getter)
+#         return self.width
+    
+#     def set_width(self, width): #설정자(setter)
+#         self.width = width
+    
+#     def get_height(self): #접근자(getter)
+#         return self.height
+    
+#     def set_height(self, height): #설정자(setter)
+#         self.height = height
+    
+#     def calculate_area(self): #넓이 계산
+#         return self.width * self.height
+    
+#     def calculate_perimeter(self): #둘레 길이 계산
+#         return 2 * (self.width + self.height)
+    
+# sq1 = Square(20, 30)
+# print("가로 :", sq1.get_width(), ", 세로 :", sq1.get_height())
+# print("넓이 :", sq1.calculate_area())
+# print("둘레 :", sq1.calculate_perimeter())
+# sq1.set_width(40) 
+# print("가로 :", sq1.get_width(), ", 세로 :", sq1.get_height())
+# print("넓이 :",sq1.calculate_area())
+# print("둘레 :",sq1.calculate_perimeter())
+
+
+
+# #실습과제2 0531
+# import math
+
+# class position:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def set_x(self, x): #설정자(setter)
+#         self.x = x
+
+#     def get_x(self): #접근자(getter)
+#         return self.x
+    
+#     def set_y(self, y): #설정자(setter)
+#         self.y = y
+
+#     def get_y(self): #접근자(getter)
+#         return self.y
+    
+#     def calculate_distance(self): #거리 계산
+#         return math.sqrt((self.x ** 2) + (self.y ** 2))
+
+#     def __str__(self):
+#         return "<{},{}>".format(self.x, self.y)
+
+# my_position = position(20, 30)
+# print(my_position)
+# print(my_position.calculate_distance())
+
+
+
+# # 실습예제3 0602
+# from fractions import Fraction #분수 라이브러리 import
+
+# class FractionConversion: 
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#         self.f = Fraction(x, y)
+
+#     def set_xyf(self, x, y): # 설정자(setter)
+#         self.x = x
+#         self.y = y
+#         self.f = Fraction(x, y)
+
+#     def get_f(self): # 접근자(getter)
+#         return self.f
+    
+#     def add(self, other): # 덧셈
+#         return (Fraction(self.f) + Fraction(other))
+
+#     def subtract(self, other): # 뺄셈
+#         return (Fraction(self.f) - Fraction(other))
+    
+#     def multiply(self, other): # 곱셈
+#         return (Fraction(self.f) * Fraction(other))
+    
+#     def divide(self, other): #나눗셈
+#         return (Fraction(self.f) / Fraction(other))
+    
+#     def floater(self): # float자료형 변경
+#         return float(self.f)
+    
+#     def reciprocal(self): # 역수
+#         return Fraction(self.y, self.x)
+    
+#     def __str__(self):
+#         return "{}/{}".format(self.x, self.y)
+    
+
+# f1 = FractionConversion(1, 2)
+# f2 = FractionConversion(2, 3)
+
+# print("덧셈 결과 :", f1.add(f2.get_f()))
+# print("뺄셈 결과 :", f1.subtract(f2.get_f()))
+# print("곱셈 결과 :", f1.multiply(f2.get_f()))
+# print("나눗셈 결과 :", f1.divide(f2.get_f()))
+# print("점 표기법 결과 :", f1.floater())
+# print("역수 결과 :", f1.reciprocal())
