@@ -1139,7 +1139,7 @@
 
 
 # # 실습예제3 0602
-from fractions import Fraction
+# from fractions import Fraction
 
 # class FractionConversion: 
 #     def __init__(self, x, y):
@@ -1186,3 +1186,59 @@ from fractions import Fraction
 # print("나눗셈 결과 :", f1.divide(f2.get_f()))
 # print("점 표기법 결과 :", f1.floater())
 # print("역수 결과 :", f1.reciprocal())
+
+
+
+
+# #실습과제1 0605
+# import random
+
+# n1 = int(input("렌덤 문자열의 최소 단어수: "))
+# n2 = int(input("렌덤 문자열의 최대 단어수: "))
+
+
+# def rand_cha(): #렌덤한 숫자 or 대문자 문자 출력
+#     strs = "1234567890QWERTYUIOPASDFGHJKLZXCVBNM"
+#     rand_index = random.randint(0, len(strs) - 1)
+#     return strs[rand_index]
+
+
+# def rand_str(n1, n2): #n1와 n2사이의 렌덤한 수의 렌덤한 문자열 출력
+#     n = random.randint(n1, n2)  # n1 이상 n2 이하의 랜덤 수 생성
+
+#     rand_str_list = []
+#     for _ in range(n):
+#         ch = rand_cha()
+#         while ch in rand_str_list:  # 중복된 문자가 이미 리스트에 있는 경우 다시 뽑기
+#             ch = rand_cha()
+#         rand_str_list.append(ch)
+
+#     result = "".join(rand_str_list)  # 리스트의 문자들을 하나의 문자열로 합치기
+#     print(result)
+
+
+# rand_str(n1, n2)
+
+
+
+# #실습과제2 0605
+# numbers = [1,3,5,7,9]
+
+# def reverse_generater(n):
+#     for i in range(len(n) - 1, -1, -1): #for의 세번째 인자에 -1을 할당하여 역으로 반복
+#         yield n[i]
+
+# for num in reverse_generater(numbers): #reverse_generater 함수의 값 출력
+#     print(num, end=" ")
+
+# print("") #줄바꿈
+
+# def last_even(n): #마지막에 나타나는 짝수를 찾는 함수
+#     n = reverse_generater(n) #역수로 변환
+#     for i in n:
+#         if (i % 2) == 0: #만약 짝수라면?
+#             return i #반환
+    
+#     return "짝수가 없음" #값이 없는 예외경우
+
+# print("마지막 짝수는 :", last_even(numbers))
