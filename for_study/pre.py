@@ -1139,7 +1139,7 @@
 
 
 # # 실습예제3 0602
-# from fractions import Fraction #분수 라이브러리 import
+from fractions import Fraction
 
 # class FractionConversion: 
 #     def __init__(self, x, y):
