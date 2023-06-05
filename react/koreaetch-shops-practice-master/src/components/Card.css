@@ -1,0 +1,29 @@
+.card-container {
+  width: 300px;
+  height: 130px;
+  border: 1px solid rgb(23, 92, 142);
+  padding: 22px 27px;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.descriptions {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.tags {
+  display: flex;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.tag {
+  padding: 5px 10px;
+  background-color: orange;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+}
