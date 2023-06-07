@@ -1242,3 +1242,71 @@
 #     return "짝수가 없음" #값이 없는 예외경우
 
 # print("마지막 짝수는 :", last_even(numbers))
+
+
+
+# #Lab16 0607
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#     def __repr__(self): 
+#         return "<이름: %s, 나이: %s>" % (self.name, self.age)
+
+# def keyAge(person):
+#     return person.age
+
+# people = [Person("홍길동", 20), Person("김철수", 35), Person("최자영", 38)]
+
+# print(sorted(people, key = keyAge))
+# print(sorted(people, key = lambda person: person.age))
+
+
+# #Lab26 0607
+# class FibIterator:
+#     def __init__(self, maxValue=50):
+#         self.a = 0 
+#         self.b = 1
+#         self.maxValue = maxValue
+#     def __iter__(self):
+#         return self 
+#     def __next__(self):
+#         fib = self.b
+#         if (fib > self.maxValue):
+#             raise StopIteration()
+#         self.a, self.b = self.b, self.a+self.b
+#         return fib
+
+# for i in FibIterator():
+#     print(i, end=" ")
+
+
+
+# #Lab32 0607
+# class Book:
+#     def __init__(self, title='', pages=0):
+#         self.title = title
+#         self.pages = pages
+#     def __str__(self):
+#         return self.title
+#     def __add__(self, other):
+#         return self.pages + other.pages
+
+# book1 = Book("자료구조", 800)
+# book2 = Book("파이썬", 600)
+# print(book1 + book2)
+
+
+# #Lab51 0607
+# import random
+
+# my_list = ["head", "tail"]
+
+# while True:
+#     response = input("계속하시겠습니까?(y/n) : ")
+#     if response == "y":
+#         coin = random.choice(my_list)
+#         print(coin)
+#     else:
+#         break
+
