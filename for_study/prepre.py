@@ -222,3 +222,17 @@
 
 
 
+# N_array = input().split()
+# int_N_array = []
+
+# for i in N_array:
+#     int_N_array.append(int(i))
+
+# if len(N_array) <= 100000:
+#     for i in int_N_array:
+#         j = i + 1
+#         n = int_N_array[i:j]
+#         if n == 12 and n == 21:
+#             print('Yes')
+#         else:
+#             print("No")
