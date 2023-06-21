@@ -1312,4 +1312,59 @@
 #         break
 
 
+# def count_file_statistics(filename): 
+#     try:
+#         with open(filename, 'r') as file: #with으로 파일 열기
+#             lines = file.readlines() #lines에 줄들을 저장
+#             line_count = len(lines)
+#             word_count = 0
+#             char_count = 0
+#             for line in lines:
+#                 words = line.split() #공백을 기준으로 단어를 셈
+#                 word_count += len(words)
+#                 char_count += sum(len(word) for word in words) #해당 단어에서 for문으로 문자수를 셈
+#             return line_count, word_count, char_count
+#     except FileNotFoundError: #만약 파일을 찾을 수 없을때
+#         print("파일을 찾을 수 없습니다.")
+#         return None
+
+# def main():
+#     filename = "proverbs.txt"  # 테스트할 파일 이름
+#     result = count_file_statistics(filename)
+#     if result:
+#         line_count, word_count, char_count = result
+#         print("줄 수:", line_count)
+#         print("단어 수:", word_count)
+#         print("문자 수:", char_count)
+
+# main()
+
+
+
+def calculate_scores(filename):
+    with open(filename, 'r', encoding='utf-8') as file: #with을 사용해서 파일을 열음
+        lines = file.readlines()
+        
+        subjects = lines[0].strip().split(',') # 첫 번째 줄을 과목명으로 분리
+        
+        # 과목수와 학생수 계산
+        num_subjects = len(subjects) 
+        num_students = len(lines) - 1  # 첫 번째 줄을 제외한 나머지 줄은 학생들의 점수
+        
+        # 각 과목의 평균 점수 계산
+        subject_scores = [0] * num_subjects
+        for line in lines[1:]:
+            scores = list(map(int, line.strip().split(',')))
+            for i, score in enumerate(scores):
+                subject_scores[i] += score
+        
+        subject_averages = [score / num_students for score in subject_scores]
+        
+        # 결과 출력
+        print("과목수:", num_subjects)
+        print("학생수:", num_students)
+        print("각 과목의 평균 점수:", subject_averages)
+
+# 함수 호출 및 파일명 전달
+calculate_scores("students_grades.txt")
 
