@@ -1,0 +1,67 @@
+
+/* 메인 메뉴 */
+#mainMenu {
+  display: flex;
+  position: absolute;
+  height: 300px;
+  width: calc(100vw);
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+a .topLink {
+  flex-basis: 100px;
+}
+
+/* login, regist 내용 */
+.navigate {
+  display: flex;
+  height: 80px;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* login 내용 */
+#loginSpan {
+  display: flex;
+  height: 80px;
+  width: calc(100px + 5vw);
+  align-items: center;
+  justify-content: space-between;
+}
+
+a .loginLink {
+  flex-basis: 100px;
+  width: calc();
+}
+
+#loginMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  width: 600px;
+  background-color: #ffffff;
+
+  align-items: center;
+}
+
+p .pLogin {
+  color: black;
+  background-color: aliceblue;
+}
+
+
+/* regist 내용 */
+#registMenu {
+  display: flex;
+  width: 100vw;
+  height: 600px;
+  flex-direction: column;
+  justify-content: center;	
+  align-items: center;
+  justify-content: space-around;
+}
