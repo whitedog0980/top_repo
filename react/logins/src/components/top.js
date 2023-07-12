@@ -18,12 +18,16 @@ function Top() {
   }
 
   return (
-    <div id="mainMenu">
-      {isLoginVisible && (<a href="#" onClick={handleLoginClick} className="btn btn-info topLink">login</a>)}
-      {isRegisterVisible && (<a href="#" onClick={handleRegisterClick} className="btn btn-light topLink">register</a>)}
+    <>
+      {(isLoginVisible && isRegisterVisible) && (
+        <div id="mainMenu">
+          <a href="#" onClick={handleLoginClick} className="btn btn-info topLink">login</a>
+          <a href="#" onClick={handleRegisterClick} className="btn btn-light topLink">register</a>
+        </div>
+      )}
       {!isLoginVisible && <Login />}
       {!isRegisterVisible && <Register />}
-    </div>
+    </>
   )
 }
 
