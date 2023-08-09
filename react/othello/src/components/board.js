@@ -36,6 +36,7 @@ const StyledBtn = styled.button`
   width: calc(10vw + 20px);
   height: calc(3vh + 10px);
   border-radius: 5px;
+  font-size: 20px;
 `
 
 const CellSpans = styled.span`
@@ -79,17 +80,53 @@ const SpanChess = styled.span`
   }
 `
 
-const Header = ({set}) => {
+const Header = ({set, set_span_proxy, spans}) => {
   const handleClickSkip = () => {
     set()
   }
   const handleClickRandom = () => {
-    
-  }
+    const score_board = []
+      .concat([90, -5, 50, 10, 10, 50, -5, 90]) // Line 1
+      .concat([-5, -9, -2, -2, -2, -2, -9, -5]) // Line 2
+      .concat([50, -2, -1, -1, -1, -1, -2, 50]) // Line 3
+      .concat([10, -2, -1, -1, -1, -1, -2, 10]) // Line 4
+      .concat([10, -2, -1, -1, -1, -1, -2, 10]) // Line 5
+      .concat([50, -2, -1, -1, -1, -1, -2, 50]) // Line 6
+      .concat([-5, -9, -2, -2, -2, -2, -9, -5]) // Line 7
+      .concat([90, -5, 50, 10, 10, 50, -5, 90]); // Line 8
+
+    let can_set = spans.map((chess, id) => {
+      if (chess === "neutral_can_put")
+        return { id: id, score: score_board[id] };
+      return 0;
+    });
+    can_set = can_set.filter((element) => {
+      return element !== 0;
+    });
+    can_set.sort((a, b) => {
+      return b.score - a.score;
+    });
+    if (!can_set.length) {
+      set();
+      return;
+    };
+    can_set = can_set.filter((element) => {
+      return element.score === can_set[0].score;
+    });
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    set_span_proxy(can_set[getRandomInt(0, can_set.length - 1)].id);
+  };
+
+
+
   return (
     <MainHeader>
-      <StyledBtn onClick={handleClickSkip} ></StyledBtn>
-      <StyledBtn onClick={handleClickRandom} ></StyledBtn>
+      <StyledBtn onClick={handleClickSkip} >Skip!</StyledBtn>
+      <StyledBtn onClick={handleClickRandom} >AI PUT!</StyledBtn>
       <StyledBtn></StyledBtn>
       <StyledBtn></StyledBtn>
     </MainHeader>
@@ -124,6 +161,8 @@ const ChessSpan = ({ order, state, set }) => {
 export default function OthelloBoard() {
   const [round, setRound] = useState(0);
 
+
+  
   const set_span_proxy = (id) => {
     // skip this click event if there is already a chess at id.
     if ((spans[id] !== "neutral") && (spans[id] !== "neutral_can_put")) return;
@@ -158,16 +197,9 @@ export default function OthelloBoard() {
       console.log("Next: White");
     }
 
-    //delete previous "neutral_can_put"
-
-    // update "neutral_can_put"
-  
-
-
-
-
   setSpans(newspans);
   };
+
 
   useEffect(() => {
     let next_chess = round % 2 === 1 ? "white" : "black";
@@ -182,6 +214,9 @@ export default function OthelloBoard() {
     })
     setSpans(newspans);
   }, [round])
+
+  //select "neutral_can_put" in logic
+
 
   // initialize the OthelloBoard with some chess in the centre.
   let spanstate_first_round = [];
@@ -199,7 +234,7 @@ export default function OthelloBoard() {
 
   return (
     <MainDiv>
-      <Header set={() => {setRound(round + 1)}}></Header>
+      <Header set={() => {setRound(round + 1)}} set_span_proxy={set_span_proxy} spans={spans}></Header>
       {spans.map((sp, index) => (
         <CellSpans
         key={"cellspan" + index} 
