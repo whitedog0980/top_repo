@@ -93,7 +93,7 @@ const Header = ({set, set_span_proxy, spans}) => {
       .concat([10, -2, -1, -1, -1, -1, -2, 10]) // Line 5
       .concat([50, -2, -1, -1, -1, -1, -2, 50]) // Line 6
       .concat([-5, -9, -2, -2, -2, -2, -9, -5]) // Line 7
-      .concat([90, -5, 50, 10, 10, 50, -5, 90]); // Line 8
+      .concat([90, -5, 50, 10, 10, 50, -5, 90]);// Line 8
 
     let can_set = spans.map((chess, id) => {
       if (chess === "neutral_can_put")
