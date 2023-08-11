@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import X_y_to_id from "./x_y_to_id";
 import Try_set_chess from "./try_set_chess";
 import Can_set_chess from "./can_set_chess";
+import { useNavigate } from 'react-router-dom';
 
 const MainDiv = styled.div`
   display: flex;
@@ -98,6 +99,7 @@ const GameSetSpan = styled.span`
 
 
 const Header = ({set, set_span_proxy, spans}) => {
+  const navigate = useNavigate();
   const handleClickSkip = () => {
     set()
   }
@@ -141,6 +143,7 @@ const Header = ({set, set_span_proxy, spans}) => {
     <MainHeader>
       <StyledBtn onClick={handleClickSkip} >Skip!</StyledBtn>
       <StyledBtn onClick={handleClickRandom} >AI PUT!</StyledBtn>
+      <StyledBtn onClick ={()=>{ navigate('/');}}>Go to Title</StyledBtn>
     </MainHeader>
   )
 }
@@ -211,12 +214,8 @@ export default function OthelloBoard() {
   };
 
   //game set rogic
-  const PreGameSet = () => {
-    if (gameSet) {
-      return GameSet()
-    } else {<div></div>}
-  }
-  const GameSet = () => {
+  const GameSet = ({gameSet}) => {
+    if(!gameSet) return <div></div>
     let score = [0,0];
     for (let i = 0; i < 64; i++) {
       if (spans[i] === "black") {score[0] = score[0] + 1}
@@ -270,7 +269,6 @@ export default function OthelloBoard() {
       }
     }
     setGameSet(game_set)
-    if (game_set) {PreGameSet()}
 
     setSpans(newspans);
   }, [round])
@@ -305,8 +303,7 @@ export default function OthelloBoard() {
           />
         </CellSpans>
       ))}
-      <PreGameSet></PreGameSet>
+      <GameSet gameSet={gameSet}></GameSet>
     </MainDiv>
   );
 }
-
