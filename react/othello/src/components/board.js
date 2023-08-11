@@ -10,7 +10,6 @@ const MainDiv = styled.div`
   align-items: center;
   width: 100vw;
   height: 96vw;
-  background-color: gray;
   margin: 0px;
   padding: 0px;
   @media screen and (min-width: 900px) {
@@ -80,6 +79,24 @@ const SpanChess = styled.span`
   }
 `
 
+const GameSetSpan = styled.span`
+  position: absolute;
+  left: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 30vw;
+  background-color: rgba(255,255,255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 5vw;
+  border: 3px solid black;
+  box-shadow: 0 0 50px 15px gray;
+  font-size: 5vw;
+`
+
+
+
 const Header = ({set, set_span_proxy, spans}) => {
   const handleClickSkip = () => {
     set()
@@ -120,15 +137,10 @@ const Header = ({set, set_span_proxy, spans}) => {
 
     set_span_proxy(can_set[getRandomInt(0, can_set.length - 1)].id);
   };
-
-
-
   return (
     <MainHeader>
       <StyledBtn onClick={handleClickSkip} >Skip!</StyledBtn>
       <StyledBtn onClick={handleClickRandom} >AI PUT!</StyledBtn>
-      <StyledBtn></StyledBtn>
-      <StyledBtn></StyledBtn>
     </MainHeader>
   )
 }
@@ -160,16 +172,14 @@ const ChessSpan = ({ order, state, set }) => {
 
 export default function OthelloBoard() {
   const [round, setRound] = useState(0);
+  const [gameSet, setGameSet] = useState(false);
 
-
-  
+  //Main Logic
   const set_span_proxy = (id) => {
     // skip this click event if there is already a chess at id.
     if ((spans[id] !== "neutral") && (spans[id] !== "neutral_can_put")) return;
 
     let next_chess = round % 2 === 1 ? "white" : "black"
-    let next_2_chess = round % 2 === 0 ? "white" : "black"
-
 
     let x = id % 8;
     let y = Math.floor(id / 8);
@@ -178,7 +188,7 @@ export default function OthelloBoard() {
       y = 100;
     }
 
-    // skip if we cant set the chess
+    // skip if we can't set the chess
     const try_set_chess_return = Try_set_chess(x, y, spans, next_chess)
     if (!try_set_chess_return[0]) return;
 
@@ -200,6 +210,27 @@ export default function OthelloBoard() {
   setSpans(newspans);
   };
 
+  //game set rogic
+  const PreGameSet = () => {
+    if (gameSet) {
+      return GameSet()
+    } else {<div></div>}
+  }
+  const GameSet = () => {
+    let score = [0,0];
+    for (let i = 0; i < 64; i++) {
+      if (spans[i] === "black") {score[0] = score[0] + 1}
+      if (spans[i] === "white") {score[1] = score[1] + 1}
+    }
+    if (score[0] > score[1]) {
+      return <GameSetSpan>&nbsp;&nbsp;{score[0]} VS {score[1]} <br/> Black Win!</GameSetSpan>
+    } else if (score[1] > score[0]) {
+      return <GameSetSpan>&nbsp;&nbsp;{score[0]} VS {score[1]} <br/> White Win!</GameSetSpan>
+    } else {
+      return <GameSetSpan>{score[0]} VS {score[1]} <br/> Draw!</GameSetSpan>
+    }
+  }
+
 
   useEffect(() => {
     let next_chess = round % 2 === 1 ? "white" : "black";
@@ -209,14 +240,40 @@ export default function OthelloBoard() {
     for (let i = 0; i < 64; i++) {
       if ((spans[i] === "neutral_can_put")) newspans[i] = "neutral";
     }
+    //create new "neutral_can_put"
     Can_set_chess(newspans, next_chess).forEach((changed) => {
       newspans[X_y_to_id(changed.x, changed.y)] = "neutral_can_put";
     })
+    //no "neutral" or "neutral_can_put" => gameset
+    let game_set = true; 
+    for (let i = 0; i < 64; i++) {
+      if ((spans[i] === "neutral_can_put") || (spans[i] === "neutral")) {
+        game_set = false;
+      }
+    }
+    //no "white" => gameset
+    if (game_set === false) {
+      game_set = true
+      for (let i = 0; i < 64; i++) {
+        if ((spans[i] === "white")) {
+          game_set = false;
+        }
+      }
+    }
+    //no "black" => gameset
+    if (game_set === false) {
+      game_set = true
+      for (let i = 0; i < 64; i++) {
+        if ((spans[i] === "black")) {
+          game_set = false;
+        }
+      }
+    }
+    setGameSet(game_set)
+    if (game_set) {PreGameSet()}
+
     setSpans(newspans);
   }, [round])
-
-  //select "neutral_can_put" in logic
-
 
   // initialize the OthelloBoard with some chess in the centre.
   let spanstate_first_round = [];
@@ -248,6 +305,7 @@ export default function OthelloBoard() {
           />
         </CellSpans>
       ))}
+      <PreGameSet></PreGameSet>
     </MainDiv>
   );
 }
