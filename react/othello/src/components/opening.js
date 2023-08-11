@@ -10,7 +10,7 @@ const OpeningDiv = styled.div`
   align-items: center;
   justify-content: center; 
   width: 100vw;
-  height: 100vw;
+  height: 60vw;
   background-color: beige;
 `
 const BtnsDiv = styled.div`
@@ -57,6 +57,7 @@ export default function Opening() {
       <StyledImg src=".\othello_example2.png"/>
       <StyledP>+ 를 클릭하게 된다면 이렇게 사이에 있는 돌을 자신의 돌로 바꿀 수 있습니다.</StyledP>
       <StyledP><br/> 게임 특성상, 구석에 있는 돌이 뒤집어지기 어려우므로, 우선해서 확보할 필요가 있습니다.</StyledP>
+      <StyledP><br/> 특정 알고리즘으로 컴퓨터가 놓게 할 수 있는 "AI PUT!" 버튼이 있으므로,<br /> 혼자서 플레이 하는것도 가능합니다!</StyledP>
     </HowToPlayDiv>
     else return <div></div>
   }
