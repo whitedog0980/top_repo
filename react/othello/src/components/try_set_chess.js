@@ -4,6 +4,7 @@ import X_y_to_id from "./x_y_to_id";
 export default function Try_set_chess(x, y, spans, next_chess) {
   let changed_chesses = [];
 
+  //if you clicked 'Skip!' button
   if (x === 100) {
     return [result, changed_chesses]
   }
